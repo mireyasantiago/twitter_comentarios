@@ -1,0 +1,40 @@
+#logo {
+	width: 100px;
+	height: 100px;
+
+}
+
+.container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+
+}
+
+.navbar-brand {
+    float: left;
+    height: 100px;
+}
+
+.color__MistyRose  {
+	background-color: MistyRose ; 
+}
+
+.navbar-default {
+	background-color: black;
+}
+
+.navbar-red {
+	background-color: red;
+}
+
+.navbar-default .navbar-text {
+	color: white;
+}
+
+.tachado {
+	text-decoration: line-through;
+}
+
+
+
+
