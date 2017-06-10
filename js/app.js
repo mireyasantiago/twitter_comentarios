@@ -3,14 +3,13 @@
 	var contador = 0;
 
 	var cargarPagina = function () {
-		// Envío de To - Do
-		$("#formulario").submit(agregarToDo);
+		
+		$("#formulario").submit(agregar);
 		$("#message").keyup(validarContenido);
 	};
 
-	var agregarToDo = function (e) {
+	var agregar = function (e) {
 		e.preventDefault();
-		// Obtenemos datos
 		var $contenedor = $("#posts");
 		var $mensajeContenedor = $("#message");
 		var $botonAgregar = $("#add-button");
@@ -21,16 +20,16 @@
 		var $postContenedor = $("<article />", { "class": "jumbotron" });
 		var $postCheck = $("<input type='checkbox' />");
 		var $postTexto = $("<label />");
-		//var $contadorCLetras = $("<p/> ", {"class: cantidadCaracteres"}) 
+		//var $contadorCLetras = $("<span/>", {"class: cantidadCaracteres"}) 
 
 		var identificador = "marcador-" + contador;
 
 		$postCheck.id = identificador;
 		
 		$postTexto.attr("for", identificador);
-		$postTexto.text(mensaje);
+		$postTexto.text($mensaje);
 
-		$postCheck.click(eliminarToDo);
+		$postCheck.click(eliminar);
 
 		$postContenedor.append($postCheck);
 		$postContenedor.append($postTexto);
@@ -44,13 +43,13 @@
 		contador++;
 	};
 
-	var eliminarToDo = function () {
+	var eliminar = function () {
 		$(this).parent().remove();
 	};
 
 	var validarContenido = function () {
 		var $addButton = $("#add-button");
-		// .trim() solo borra los espacios de sobra a los costados (izquierda y derecha)
+		
 		if($(this).val().trim().length > 0) {
 			$addButton.removeAttr("disabled");
 		} else {
@@ -65,6 +64,7 @@
     
     if (contadorC >= 21 && contadorC <= 30) {
         cantidadCaracteres.text(contadorC + "/140")
+    }
     if (contadorC >= 0 && contadorC <= 20) {
         cantidadCaracteres.text(contadorC + "/140")
     }
@@ -74,8 +74,8 @@
     else if (contadorC >= 31 && contadorC <= 140) {
         cantidadCaracteres.text(contadorC + "/140")
     }
-}
-*/
+};*/
+
 	// Cuando carga la página
 	$(document).ready(cargarPagina);
 })();
